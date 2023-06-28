@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        const root = document.getElementById('root')
+        const h1 = document.createElement('h1')
+
+        h1.innerText = 'Hello my friend !'
+        h1.style.color = 'red'
+        h1.className = 'test test-2'
+        console.log(h1);
+
+        root.appendChild(h1)
+    </script>
+</body>
+</html>
