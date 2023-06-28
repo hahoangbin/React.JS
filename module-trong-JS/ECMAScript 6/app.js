@@ -31,3 +31,8 @@ var profile = {
     ...obj3
 }
 console.log(profile);
+
+function logger(...params) {
+    console.log(params);
+}
+logger(1,2,3,4,5,6,7,8)
