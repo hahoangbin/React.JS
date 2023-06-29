@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <title>Document</title>
+</head>
+<body> 
+    
+    <div id="root"></div>
+
+    <script>
+        const h1DOM = document.createElement('h1')
+
+        h1DOM.title = 'hello'
+        h1DOM.className = 'heading'
+        h1DOM.innerText = 'Hello guys!'
+
+        document.body.appendChild(h1DOM)
+
+        const h1React = React.createElement('h2', {
+            title: 'hello',
+            className: 'heading'
+        }, 'Hello ReactJS')
+
+        const ulReact = document.createElement(
+            'ul', 
+            {
+                id: 'ul-li',
+                style: 'color: red;'
+            },
+            React.createElement('li', null, 'Javascript'),
+            React.createElement('li', null, 'ReactJS')
+        )
+
+        const root = document.getElementById('root')
+
+        ReactDOM.render([ulReact], root)
+    </script>
+</body>
+</html>
