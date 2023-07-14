@@ -52,13 +52,14 @@
       // Bai-14
       const reactCourse = "ReactJS F8";
 
-      const ul =
-        <ul className="ul-dom">
-          <li style="{{ color: red }}">Javascript</li>
-          <li>ReactJS</li>
-        </ul>
+      const jsx = (
+        <React.Fragment>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+        </React.Fragment>
+      );
 
-      ReactDOM.render(ul, document.getElementById("root"));
+      ReactDOM.render(jsx, document.getElementById("root"));
     </script>
   </body>
 </html>
