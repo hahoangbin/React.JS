@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function App() {
+            return (
+                <div>
+                    <h1 id="app">HELLO ANH EM!</h1>
+                    <Content 
+                        title="C#(.NET) -tuong tac voi file js"
+                        callback={(random) => {
+                            console.log('random:', random);
+                        }}/>
+                    <Content />
+                    <Content />
+                </div>
+            )
+        }
+
+        function Content(props) {
+
+            if ( typeof props.callback == "function") {
+                props.callback(Math.random())
+            }
+
+            return (
+                <div>
+                    <h2>{props.title}</h2>
+                    <h3>Ban co kien thuc ve ReactJS khong, hay hoc cung chung toi nhe!</h3>
+                    <p>hello lai la minh day, cac ban con nho minh khong</p>
+                </div>
+            )
+        }
+
+
+        ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+</body>
+</html>
