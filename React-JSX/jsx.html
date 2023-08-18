@@ -15,30 +15,59 @@
             2. JSX khong phai la HTML, can co Javascript va Babel de dung JSX    
         -->
 
-        <div id="root"></div>
+        <div id="app"></div>
     </div>
 
     <script type="text/babel">
-        const courses = [
-            { name: 'HTML, CSS'},
-            { name: 'Javascript'},
-            { name: 'ReactJS'},
-        ]
+        // const courses = [
+        //     { name: 'HTML, CSS'},
+        //     { name: 'Javascript'},
+        //     { name: 'ReactJS'},
+        // ]
 
 
-        const jsx = (
-            <ul>
-                {courses.map((course, index) =>
-                    <li key={index}>{course.name}</li>
-                )}
+        // const jsx = (
+        //     <ul>
+        //         {courses.map((course, index) =>
+        //             <li key={index}>{course.name}</li>
+        //         )}
 
-                <div>Hello</div>
-                <div>Hello my friend</div>
-            </ul>
+        //         <div>Hello</div>
+        //         <div>Hello my friend</div>
+        //     </ul>
+        // )
+
+        // Create component = function
+        function Header() {
+            return (
+                <div className="header">Header</div>
+            )
+        }
+        function Footer() {
+            return (
+                <div className="footer">Footer</div>
+            )
+        }
+
+        // Create component = class
+        class Content extends React.Component {
+            render() {
+                return (
+                    <div className="content">Content</div>
+                )
+            }
+        }
+
+        const app = (
+            <div className="weapper">
+                <Header />
+                <Content />
+                <Footer />
+            </div>
         )
 
-        const root = document.getElementById('root')
-        ReactDOM.render(jsx, root)
+        const root = document.getElementById('app')
+        ReactDOM.render(app, root)
     </script>
 </body>
 </html>
