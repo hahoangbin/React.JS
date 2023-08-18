@@ -16,6 +16,10 @@
         h1.style.color = 'red'
         h1.className = 'test test-2'
         console.log(h1);
+        Object.assign(h1.style, {
+            color: 'blue',
+            border: '1px solid #333'
+        })
 
         root.appendChild(h1)
     </script>
