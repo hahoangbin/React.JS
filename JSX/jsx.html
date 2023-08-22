@@ -45,6 +45,14 @@
                 <p>{props.studentsCount}</p>
             </div>
         )
+        const Form = {
+            Input() {
+                return <input />
+            },
+            Checkbox() {
+                return <input type="checkbox" />
+            }
+        }
 
         function App() {
 
@@ -59,6 +67,8 @@
                         onClick={() => console.log(Math.random())}>
                         Click me!    
                     </button>
+                    <Form.Input />
+                    <Form.Checkbox />
                     {courses.map(course => (
                         <CourseItem 
                             key={course.id}
