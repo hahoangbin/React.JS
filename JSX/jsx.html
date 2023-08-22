@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const courses = [
+            {
+                id: 1,
+                title: "hello hello",
+                image: "https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-5_044127233.jpg",
+                description: "Trong khoa hoc nay chung ta se cung nhau xay dung app voi JSX",
+                studentsCount: "ReactJS"
+            },
+            {
+                id: 2,
+                title: "hello hello",
+                image: "https://hinhanhdephd.com/wp-content/uploads/2019/05/hinh-anh-dep-lam-hinh-nen-dep-2.jpg",
+                description: "Trong khoa hoc nay chung ta se cung nhau xay dung app voi JSX",
+                studentsCount: "ReactJS"
+            },
+            {
+                id: 3,
+                title: "hello hello",
+                image: "https://thuthuatphanmem.vn/uploads/2018/09/11/hinh-anh-dep-5_044127233.jpg",
+                description: "Trong khoa hoc nay chung ta se cung nhau xay dung app voi JSX",
+                studentsCount: "ReactJS"
+            },
+        ]
+
+        const CourseItem = props => (
+            <div>
+                <h2 onClick={props.onClick}>{props.title}</h2>
+                <img src={props.image} alt="" />
+                <p>{props.description}</p>
+                <p>{props.studentsCount}</p>
+            </div>
+        )
+
+        function App() {
+
+            const handleClick = () => {
+                alert("sdfasdgsadghasgasdg")
+            }
+
+            return (
+                <div id="wrapper">
+                    <button
+                        onDoubleClick={() => console.log(Math.random())}
+                        onClick={() => console.log(Math.random())}>
+                        Click me!    
+                    </button>
+                    {courses.map(course => (
+                        <CourseItem 
+                            key={course.id}
+                            title={course.title}
+                            image={course.image}
+                            description={course.description}
+                            studentsCount={course.studentsCount}
+                            onClick={handleClick} />
+                    ))}
+
+                </div>
+            )
+        }
+
+
+        ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+</body>
+</html>
