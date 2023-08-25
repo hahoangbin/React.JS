@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 
 // Create component App
 function App() {
@@ -11,5 +11,8 @@ function App() {
     )
 }
 
-// Render component App vao #root element
-ReactDOM.render(<App />, document.getElementById('root'))
+// Render React@17 component App vao #root element
+// ReactDOM.render(<App />, document.getElementById('root'))
+// Render React@18 component App vao #root element
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
