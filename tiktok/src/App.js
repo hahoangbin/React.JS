@@ -1,6 +1,8 @@
 
 import './App.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Content from './Content'
+import Live from './Live'
  
 function App() {
   const [job, setJob] = useState('')
@@ -8,6 +10,8 @@ function App() {
     const storageJobs = JSON.parse(localStorage.getItem('jobs'))
     return storageJobs ?? []
   })
+  const [show, setShow] = useState(false)
+  const [width, setWidth] = useState(window.innerWidth)
 
   const handleSubmit = () => {
     setJobs(prev => {
@@ -19,9 +23,20 @@ function App() {
     setJob('')
   }
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [window.innerWidth])
+
   return (
     <div className="App">
       <header className="App-header">
+        <div value={width}>{width}</div>
          <div>
           <input 
             value={job}
@@ -33,7 +48,10 @@ function App() {
             ))}
           </ul>
          </div>
+         {show && <Content />}
+         <button onClick={() => setShow(!show)}>Toggle</button>
       </header>
+      {/* <Live /> */}
     </div>
   );
 }
