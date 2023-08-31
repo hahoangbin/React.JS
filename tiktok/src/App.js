@@ -2,7 +2,7 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import Content from './Content'
-import Live from './Live'
+import CountDown from './Countdown';
  
 function App() {
   const [job, setJob] = useState('')
@@ -48,8 +48,9 @@ function App() {
             ))}
           </ul>
          </div>
-         {show && <Content />}
+         {/* {show && <Content />} */}
          <button onClick={() => setShow(!show)}>Toggle</button>
+         {show && <CountDown />}
       </header>
       {/* <Live /> */}
     </div>
